@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700&family=Noto+Kufi+Arabic:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background-color: cornflowerblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        form h1{
+            color: #1b1b1b;
+            font-weight: 600;
+        }
+
+        .container{
+            width: 400px;
+            height: 400px;
+            background-color: azure;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px auto;
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        input{
+            margin: 10px;
+            padding: 10px 20px;
+            display: block;
+            width: 100%;
+            border-radius: 2px;
+            outline: 1px solid #ccc;
+            border: none;
+        }
+        input:focus{
+            outline: 1px solid #ccc;
+        }
+        button{
+            display: block;
+            margin: 0 10px;
+            width: 100%;
+            padding: 10px;
+            background-color: #bac85c;
+            color: white;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+        }
+        button:disabled{
+            cursor:not-allowed;
+            background-color: #ccc;
+        }
+        a{
+            margin: 10px;
+            display: block;
+            text-decoration: none;
+            color: mediumpurple;
+            transition: .5s;
+            float: left;
+        }
+
+
+        a:hover{
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="app" class="container">
+    <form action="" method="post">
+        <h1>Sign Up</h1>
+        <input type="text" placeholder="Type Your Name" v-model="name">
+        <input type="email" placeholder="Type Your Email" v-model="email">
+        <input type="text" placeholder="Type Your Phone" v-model="phone">
+        <button :disabled="!name || !email || !phone">Sign Up</button>
+        <a href="./Login.html">Log In</a>
+
+    </form>
+    </div>
+
+
+
+
+    
+    <script src="./vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+              name :null,
+              email:null,
+              phone:null
+            }
+        })
+
+    </script>
+</body>
+</html>
